@@ -9,8 +9,8 @@
 %define gnome_bluetooth_version 3.18.2
 
 Name:           gnome-control-center
-Version:        3.28.1
-Release:        4%{?dist}
+Version:        3.28.2
+Release:        1%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
@@ -194,6 +194,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Tue May 29 2018 Kalev Lember <klember@redhat.com> - 3.28.2-1
+- Update to 3.28.2
+
 * Wed May 23 2018 Pete Walter <pwalter@fedoraproject.org> - 3.28.1-4
 - Change NetworkManager-wifi requires to recommends (#1478661)
 
