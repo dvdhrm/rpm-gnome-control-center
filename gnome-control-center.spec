@@ -10,7 +10,7 @@
 
 Name:           gnome-control-center
 Version:        3.28.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
@@ -194,6 +194,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 3.28.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Tue May 29 2018 Kalev Lember <klember@redhat.com> - 3.28.2-1
 - Update to 3.28.2
 
