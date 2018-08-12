@@ -9,22 +9,16 @@
 %define gnome_bluetooth_version 3.18.2
 
 Name:           gnome-control-center
-Version:        3.28.2
-Release:        2%{?dist}
+Version:        3.29.90
+Release:        1%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.gnome.org
-Source0:        https://download.gnome.org/sources/gnome-control-center/3.28/gnome-control-center-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/gnome-control-center/3.29/gnome-control-center-%{version}.tar.xz
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=695691
 Patch0:         distro-logo.patch
-# thunderbolt panel backported to 3.28.x
-# https://gitlab.gnome.org/gicmo/gnome-control-center/commits/thunderbolt_3_28_1
-Patch1:         0001-shell-Don-t-set-per-panel-icon.patch
-Patch2:         0002-shell-Icon-name-helper-returns-symbolic-name.patch
-Patch3:         0003-thunderbolt-new-panel-for-device-management.patch
-Patch4:         0004-thunderbolt-move-to-the-Devices-page.patch
 
 BuildRequires:  chrpath
 BuildRequires:  cups-devel
@@ -163,7 +157,7 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 
 %files -f %{name}.lang
 %license COPYING
-%doc AUTHORS NEWS README
+%doc NEWS README.md
 %{_bindir}/gnome-control-center
 %{_datadir}/applications/*.desktop
 %{_datadir}/bash-completion/completions/gnome-control-center
@@ -194,6 +188,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Sun Aug 12 2018 Kalev Lember <klember@redhat.com> - 3.29.90-1
+- Update to 3.29.90
+
 * Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 3.28.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
