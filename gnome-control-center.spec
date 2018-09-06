@@ -9,13 +9,13 @@
 %define gnome_bluetooth_version 3.18.2
 
 Name:           gnome-control-center
-Version:        3.29.90
+Version:        3.30.0
 Release:        1%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.gnome.org
-Source0:        https://download.gnome.org/sources/gnome-control-center/3.29/gnome-control-center-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/gnome-control-center/3.30/gnome-control-center-%{version}.tar.xz
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=695691
 Patch0:         distro-logo.patch
@@ -189,6 +189,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Thu Sep 06 2018 Kalev Lember <klember@redhat.com> - 3.30.0-1
+- Update to 3.30.0
+
 * Sun Aug 12 2018 Kalev Lember <klember@redhat.com> - 3.29.90-1
 - Update to 3.29.90
 
