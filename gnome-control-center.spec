@@ -9,7 +9,7 @@
 %define gnome_bluetooth_version 3.18.2
 
 Name:           gnome-control-center
-Version:        3.30.0
+Version:        3.30.1
 Release:        1%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
@@ -189,6 +189,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Wed Sep 26 2018 Kalev Lember <klember@redhat.com> - 3.30.1-1
+- Update to 3.30.1
+
 * Thu Sep 06 2018 Kalev Lember <klember@redhat.com> - 3.30.0-1
 - Update to 3.30.0
 
