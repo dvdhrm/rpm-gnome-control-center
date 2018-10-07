@@ -10,7 +10,7 @@
 
 Name:           gnome-control-center
 Version:        3.30.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
@@ -19,6 +19,8 @@ Source0:        https://download.gnome.org/sources/gnome-control-center/3.30/gno
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=695691
 Patch0:         distro-logo.patch
+# Backported from upstream
+Patch1:         0001-online-accounts-Track-the-lifecycle-of-CcGoaPanel-ac.patch
 
 BuildRequires:  chrpath
 BuildRequires:  cups-devel
@@ -189,6 +191,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Sun Oct 07 2018 Kalev Lember <klember@redhat.com> - 3.30.1-2
+- Backport an upstream fix for a crash in the online accounts panel
+
 * Wed Sep 26 2018 Kalev Lember <klember@redhat.com> - 3.30.1-1
 - Update to 3.30.1
 
