@@ -10,7 +10,7 @@
 
 Name:           gnome-control-center
 Version:        3.30.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
@@ -21,6 +21,7 @@ Source0:        https://download.gnome.org/sources/gnome-control-center/3.30/gno
 Patch0:         distro-logo.patch
 # Backported from upstream
 Patch1:         0001-online-accounts-Track-the-lifecycle-of-CcGoaPanel-ac.patch
+Patch2:         0002-background-Add-queue-to-load-4-pictures-at-a-time.patch
 
 BuildRequires:  chrpath
 BuildRequires:  cups-devel
@@ -191,6 +192,11 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Wed Oct 10 2018 Benjamin Berg <bberg@redhat.com> - 3.30.1-3
+- Add patch to improve background loading. The patch is not acceptable
+  upstream as is, but is also a good improvement on the current situation
+  (#1631002)
+
 * Sun Oct 07 2018 Kalev Lember <klember@redhat.com> - 3.30.1-2
 - Backport an upstream fix for a crash in the online accounts panel
 
