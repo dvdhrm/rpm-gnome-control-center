@@ -10,7 +10,7 @@
 
 Name:           gnome-control-center
 Version:        3.30.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Utilities to configure the GNOME desktop
 
 License:        GPLv2+ and CC-BY-SA
@@ -92,7 +92,7 @@ Requires: bolt
 Requires: colord
 # For the printers panel
 Requires: cups-pk-helper
-Requires: dbus-x11
+Requires: dbus
 # For the info/details panel
 Requires: glx-utils
 # For the user languages
@@ -192,6 +192,11 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gnome-control-center
 %dir %{_datadir}/gnome/wm-properties
 
 %changelog
+* Thu Oct 11 2018 David Herrmann <dh.herrmann@gmail.com> - 3.30.1-4
+- Reduce 'dbus-x11' dependency to 'dbus'. The xinit scripts are no longer the
+  canonical way to start dbus, but the 'dbus' package is nowadays required to
+  provide a user and system bus to its dependents.
+
 * Wed Oct 10 2018 Benjamin Berg <bberg@redhat.com> - 3.30.1-3
 - Add patch to improve background loading. The patch is not acceptable
   upstream as is, but is also a good improvement on the current situation
